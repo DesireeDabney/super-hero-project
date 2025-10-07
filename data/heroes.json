@@ -1,0 +1,32 @@
+[
+  {
+    "superName": "Spider-Man",
+    "realName": "Peter Parker",
+    "superPower": "Web-slinging"
+  },
+  {
+    "superName": "Batman",
+    "realName": "Bruce Wayne",
+    "superPower": "None"
+  },
+  {
+    "superName": "Super-Man",
+    "realName": "Clark Kent",
+    "superPower": "Super strength, invulnerability, flight, heat vision, X-ray vision, and super speed"
+  },
+  {
+    "superName": "Colossus",
+    "realName": "Piotr 'Peter' Nikolayevich Rasputin",
+    "superPower": "Unique, organic, steel-like substance"
+  },
+  {
+    "superName": "Nightcrawler",
+    "realName": "Kurt Wagner",
+    "superPower": "Teleportation"
+  },
+  {
+    "superName": "Wolverine",
+    "realName": "Logan",
+    "superPower": "Accelerated healing, immunity to most poisons and diseases, retractable adamantium claws and a slowed aging process"
+  }
+]
