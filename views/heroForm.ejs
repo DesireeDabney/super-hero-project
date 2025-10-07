@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Superhero</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Add A Superhero!</h1>
+        <div class="card">
+            <h2>Traits</h2>
+            <form id="add-hero">
+                <%- include('partials/form-input', superName) %>
+                <%- include('partials/form-input', realName) %>
+                <%- include('partials/form-input', superPower) %>
+                <%- include('partials/form-input', affiliation) %>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
