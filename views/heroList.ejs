@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superhero Database</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="mb-4">
+            <i class="bi bi-stars me-2"></i>
+            Superhero Database
+        </h1>
+
+        <% if (heroes && heroes.length > 0) { %>
+            <div class="row">
+                <% heroes.forEach(function(hero) { %>
+                    <div class="col-md-6 col-lg-4 mb-4" id="hero-<%= hero.id%>">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <!-- Display Mode -->
+                                 <div class="hero-display" id="display-<%= hero.id %>">
+                                    <h5 class="card-title">
+                                        <i class="bi bi-mask me-2"></i>
+                                        <%= hero.superName %>
+                                    </h5>
+                                    <p class="card-text">
+                                        <strong>Real Name:</strong> <%= hero.realName %><br>
+                                        <strong>Power:</strong> <%= hero.superpower %><br>
+                                    </p>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-sm btn-outline-primary" onclick="deleteHero('<%= hero.id %>')">
+                                            <i class="bi bi-trash"></i> Delete
+                                        </button>
+                                    </div>
+                                 </div>
+                                 <!-- edit mode -->
+                                  <div class="hero-edit" id="edit-<%= hero.id %>" style = "display: none;">
+                                    <input type="text" class="form-control mb-2" id="superName-<%= hero.id %>" value="<%= hero.superName %>" placeholder="Super Name">
+                                    <input type="text" class="form-control mb-2" id="realName-<%= hero.id %>" value="<%= hero.realName %>" placeholder="Real Name">
+                                    <input type="text" class="form-control mb-2" id="superpower-<%= hero.id %>" value="<%= hero.superpower %>" placeholder="Superpower">
+                                    <div class="form-check mb-2">
+                                        <input type="checkbox" class="form-check-input" id="secretIdentity-<%= hero.id%>">
+                                        <label class="form-check-label" for="secretIdentity-<%= hero.id %>">Secret Identity</label>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-sm btn-success" onclick="updateHero('<%= hero.id %>')">
+                                            <i class="bi bi-x"></i> Cancel
+                                        </button>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+            <% } else { %>
+                <div class="alert alert-info text-center">
+                    <i class="bi bi-info-circle me-2"></i>
+                    No heroes found. Add your first superhero!
+                </div>
+                <% } %>
+                <div class="text-center mt-4">
+                    <a href="/" class="btn btn-primary btn-lg">
+                        <i class="bi bi-plus-circle me-2"></i>
+                        Add New Hero
+                    </a>
+                </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/heroActions.js"></script>
+</body>
+</html>
